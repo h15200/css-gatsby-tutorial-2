@@ -1,0 +1,26 @@
+// media query manager
+
+// 0 - 600px, 600-900, 900-1200, 1200-1800 NORMAL Style, 1800+
+// convert to em by dividing 16
+
+// @mixin media($breakpoint) {
+//   @if $breakpoint==phone {
+//     @media only screen and (max-width: 37.5em) { // 600px
+//       @content
+//     }
+//   };
+//   @if $breakpoint==tab-port {
+//     @media only screen and (min-width: 37.501em) and (max-width: 56.25em) { // 900 px
+//       @content
+//     }
+//   };
+//   @if $breakpoint==tab-land {
+//     @media only screen and (min-width: 56.2501em) and (max-width: 75em) { // 1200 px
+//       @content
+//     }
+//   };
+//   @if $breakpoint==big-desktop {
+//     @media only screen and (min-width: 112.5em) { // 1800 px
+//       @content
+//     }
+//   }
