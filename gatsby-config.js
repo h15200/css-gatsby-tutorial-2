@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'untitled',
+    title: 'Trillo',
     // siteUrl: 'https://www.Example.com',
-    description: 'explain this website'
+    description: 'An example front-end travel/hotel booking site'
   },
   plugins: [
     'gatsby-plugin-react-helmet',

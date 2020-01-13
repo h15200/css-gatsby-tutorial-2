@@ -11,7 +11,7 @@ const IndexPage = () => {
       <Head title="Index" />
       <Layout>
         <main>
-          Index Page
+          TRILLO
         </main>
       </Layout>
     </Fragment>
