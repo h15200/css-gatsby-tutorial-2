@@ -1,3 +1,26 @@
 @import '../main.scss';
 
-// for index page
+.container {
+  max-width: 75rem;
+  margin: 5rem auto;
+  background-color: $color-grey-light-2;
+  box-shadow: $shadow-dark;
+
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.flexMain {
+  flex-grow: 1;
+}
+
+.content {
+  display: flex;
+}
+
+
+.hotelView {
+  background-color: #fff;
+}

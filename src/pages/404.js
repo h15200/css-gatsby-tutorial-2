@@ -1,17 +1,16 @@
-import React, { Fragment } from 'react'
-import { Link } from 'gatsby'
+import React, { Fragment } from "react"
+import { Link } from "gatsby"
 
-import Head from '../components/helmetHead'
-import Layout from '../components/layout'
+import Head from "../components/helmetHead"
 
 const NotFound = () => {
   return (
     <Fragment>
       <Head title="404 Page" />
-      <Layout>
-        <h1>Page not found</h1>
-        <p><Link to="/">Back home</Link></p>
-      </Layout>
+      <h1>Page not found</h1>
+      <p>
+        <Link to="/">Back home</Link>
+      </p>
     </Fragment>
   )
 }

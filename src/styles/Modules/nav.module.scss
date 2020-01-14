@@ -1,59 +1,9 @@
 @import '../main.scss';
 
-.nav {
+.sidebar {
 
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-
-
-    li {
-
-
-      &:not(:last-child) {
-        margin-right: 2rem; 
-       
-      }
-
-      a:link, a:visited {
-        color: $color-grey-light-1;
-        text-decoration: none;  
-        border: 1px transparent solid;
-        padding: .3rem 1rem;
-        outline: none;
-  
-      }
-
-      a:hover, a:focus {
-        border: 1px $color-grey-light-2 solid;
-      }
-
-      a:active {
-        background-color: $color-grey-light-1;
-        color: $color-primary-dark;
-
-      }
-
-      .activeLink:link, .activeLink:visited {
-        border: 1px $color-grey-light-2 solid;
-      }
-
-        .activeLink:hover {
-          cursor: default;
-          border: 1px $color-grey-light-2 solid;
-        }
-
-        .activeLink:active {
-          background-color: $color-primary;
-          color: $color-grey-light-1;
-        }
-
-      
-
-    }
-
-  }
+  background-color: $color-grey-dark-1;
+  flex: 0 0 18%;
 
 
 

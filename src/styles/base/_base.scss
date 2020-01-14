@@ -9,20 +9,15 @@
   box-sizing: inherit;
 }
 
-html {
-  box-sizing: border-box;
-}
-
-
 body {
   background-image: linear-gradient(to bottom right, $color-primary, $color-primary-dark);
   background-size: cover;
-  color: $color-grey-light-1;
+
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
 }
 
-.section {
+.hotelView {
   padding: 2rem;
 }
