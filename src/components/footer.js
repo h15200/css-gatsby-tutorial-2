@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react"
+
+import footerStyles from "../styles/Modules/footer.module.scss"
 
 const Footer = () => {
   return (
-    <div>
-      Footer is here
-    </div>
+    <footer className={`${footerStyles.footer}`}>
+      <div className={footerStyles.u_center}>
+        <p>Footer is here</p>
+      </div>
+    </footer>
   )
 }
 

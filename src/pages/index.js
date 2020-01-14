@@ -11,7 +11,11 @@ const IndexPage = () => {
       <Head title="Index" />
       <Layout>
         <main>
-          TRILLO
+          <section className={` ${indexStyles.section} ${indexStyles.nameOfSection}`}>
+            <div className={indexStyles.u_center}>
+              <h2>TRILLO Section 1</h2>
+            </div>
+          </section>
         </main>
       </Layout>
     </Fragment>

@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react"
 
-import Nav from './nav'
+import Nav from "./nav"
+import headerStyles from "../styles/Modules/header.module.scss"
 
 const Header = () => {
   return (
-    <header>
-      <h1>header is Here</h1>
+    <header className={headerStyles.header}>
+      <div className={` ${headerStyles.u_center} `}>
+        <h1 className={`${headerStyles.headingPrimary} ${headerStyles.u_margin_bottom_big}`}>header is Here</h1>
+      </div>
       <Nav />
     </header>
   )
