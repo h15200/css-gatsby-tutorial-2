@@ -6,21 +6,26 @@
   background-color: $color-grey-light-2;
   box-shadow: $shadow-dark;
 
-
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  min-height: 30rem; 
 }
 
-.flexMain {
-  flex-grow: 1;
-}
+.header {
+
+  background-color: #fff;
+  border-bottom: $color-grey-light-2;
+} 
 
 .content {
   display: flex;
 }
 
+.sidebar {   
+  background-color: $color-grey-dark-1;
+  flex: 0 0 18%;
+}
 
 .hotelView {
   background-color: #fff;
+  background-color: orangered;
+  flex: 1;   // same as flex: 1 0 auto;
 }

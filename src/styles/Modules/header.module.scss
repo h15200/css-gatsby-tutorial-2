@@ -1,12 +1,76 @@
 @import '../main.scss';
-// for header
 
 .header {
-  height: 4rem;
-  background-color: #fff;
-  border-bottom: $color-grey-light-2;
-
-  .headingPrimary {
- 
-  }
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
 }
+
+/////////////////
+// LOGO
+  .logoContainer {
+    height: 3rem;
+    width: 3em;
+  }
+
+
+  /////////////////
+// SEARCH
+
+  .search {
+    display: flex;
+    flex: 0 0 50%;
+
+    &_input {
+    
+    }
+
+    &_button {
+
+    }
+
+    &_icon {
+
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
+/////////////////
+// USER NAV
+
+  .userNav {
+    display: flex;  
+    &_iconBox {
+
+    }
+
+    &_icon {
+      height: 2rem;
+      width: 2rem;
+    }
+
+    &_notification {
+
+
+    }
+
+    &_user {
+      display: flex;
+      
+    }
+
+    &_userPhoto {
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+    }
+
+    &_userName {
+
+    }
+
+  }
+
+
