@@ -8,16 +8,21 @@ import Footer from "../components/footer"
 // this connects main.scss to the gatsby app
 import indexStyles from "../styles/Modules/index.module.scss"
 import headerStyles from "../styles/Modules/header.module.scss"
+import sidebarStyles from '../styles/Modules/sidebar.module.scss'
 
 // svg sprite
 import searchSvg from '../images/SVG/magnifying-glass.svg'
 import bookmark from '../images/SVG/bookmark.svg'
 import chat from '../images/SVG/chat.svg'
+import home from '../images/SVG/home.svg'
+import airplane from '../images/SVG/aircraft-take-off.svg'
+import key from '../images/SVG/key.svg'
+import map from '../images/SVG/map.svg'
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo.png" }) {
+      logo: file(relativePath: { eq: "headerLogo.png" }) {
         childImageSharp {
           fluid (maxWidth: 100){
             ...GatsbyImageSharpFluid
@@ -39,10 +44,10 @@ const IndexPage = () => {
       <div className={indexStyles.container}>
         <header className={` ${headerStyles.header} ${indexStyles.header}`}>
           <div className={headerStyles.logoContainer}>
-            <Img fluid={data.logo.childImageSharp.fluid} alt="logo"/>
+            <Img className={headerStyles.logo} fluid={data.logo.childImageSharp.fluid} alt="logo"/>
           </div>
           <form action="#" className={headerStyles.search}>
-            <input type="text" className={headerStyles.search_input}/>
+            <input type="text" className={headerStyles.search_input} placeholder="Search hotels"/>
             <button className={headerStyles.search_button}>
               <img className={headerStyles.search_icon} src={searchSvg} alt="magnifying glass icon" />
             </button>
@@ -63,7 +68,37 @@ const IndexPage = () => {
           </nav>
         </header>
         <div className={indexStyles.content}>
-          <nav className={indexStyles.sidebar}>nav</nav>
+          <nav className={`${indexStyles.content} ${sidebarStyles.sidebar}`}>
+            <ul className={sidebarStyles.nav}>
+              <li className={sidebarStyles.nav_item}>
+                <a href="#" className={sidebarStyles.nav_link}>
+                  <img className={sidebarStyles.nav_icon} src={home} alt="home"/>
+                  <span className={sidebarStyles.nav_label}>Hotel</span>
+                </a>
+              </li>
+              <li className={sidebarStyles.nav_item}>
+                <a href="#" className={sidebarStyles.nav_link}>
+                  <img className={sidebarStyles.nav_icon} src={airplane} alt="airplane"/>
+                  <span className={sidebarStyles.nav_label}>Flight</span>
+                </a>
+              </li>
+              <li className={sidebarStyles.nav_item}>
+                <a href="#" className={sidebarStyles.nav_link}>
+                  <img className={sidebarStyles.nav_icon} src={key} alt="key"/>
+                  <span className={sidebarStyles.nav_label}>Car Rental</span>
+                </a>
+              </li>
+              <li className={sidebarStyles.nav_item}>
+                <a href="#" className={sidebarStyles.nav_link}>
+                  <img className={sidebarStyles.nav_icon} src={map} alt="map"/>
+                  <span className={sidebarStyles.nav_label}>Tours</span>
+                </a>
+              </li>
+            </ul>
+            <div className={sidebarStyles.legal}>
+              &copy; 2017 by trillo. All rights reserved.
+            </div>
+          </nav>
           <main className={indexStyles.hotelView}>hotel view</main>
         </div>
       </div>

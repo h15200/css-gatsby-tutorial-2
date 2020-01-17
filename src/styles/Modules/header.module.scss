@@ -2,7 +2,6 @@
 
 .header {
   display: flex;
-  padding: 1rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -12,28 +11,68 @@
   .logoContainer {
     height: 3rem;
     width: 3em;
+    margin-left: .4rem;
   }
+
 
 
   /////////////////
 // SEARCH
 
   .search {
+    flex: 0 0 40%;
     display: flex;
-    flex: 0 0 50%;
+    justify-content: center;
+    align-items: center;
 
     &_input {
-    
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit; 
+      background-color: $color-grey-light-2;  
+      border: none;
+      border-radius: 40px;
+      width: 80%;
+      padding: .4rem .8rem;
+      transition: all .2s;
+      margin-right: -3rem; // merge with icon
+      
+      &:focus {
+        outline: none;
+        width: 100%;
+        background-color: $color-grey-light-3;
+      }
+
+        &::-webkit-input-placeholder {
+        color: $color-grey-light-4; 
+        font-size: .9rem;
+      }
+    }
+
+    &_input:focus + &_button {
+      background-color: $color-grey-light-3;
     }
 
     &_button {
+      border: none;
+      border-radius: 40px;
+      background-color: $color-grey-light-2;
+      padding: 0 .8rem;
 
+      &:focus {
+        outline: none;
+        background-color: $color-grey-light-3;
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
     }
 
     &_icon {
-
-      height: 2rem;
-      width: 2rem;
+      filter: opacity(.5);
+      height: 1.7 rem; 
+      width: 1.7rem;
     }
   }
 
@@ -41,36 +80,63 @@
 // USER NAV
 
   .userNav {
-    display: flex;  
-    &_iconBox {
+    align-self: stretch;
 
+    display: flex;  
+    align-items: center;
+
+    // direct children of nav, which is iconBox x 2 and user
+    & > * {
+      padding: 0 1.3rem;
+      cursor: pointer;  
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: $color-grey-light-2;
+      }
+    }
+
+
+    &_iconBox {
+      position: relative;
     }
 
     &_icon {
-      height: 2rem;
-      width: 2rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      filter: opacity(.5);
     }
 
     &_notification {
+      border-radius: 50%;
+      position: absolute;
+      background-color: $color-primary;
+      color: #fff;
+      width: 1.1rem;
+      height: 1.1rem;
+      font-size: .5rem;
+      z-index: 1;
+      right: .7rem;
+      top: .2rem;
 
-
-    }
-
-    &_user {
+      // flexbox for text inside an element! How cool is that!?
       display: flex;
-      
+      justify-content: center;
+      align-items: center;
+    }
+    &_user {
+      padding: 0 1.3rem 0 .5rem;
     }
 
     &_userPhoto {
-      height: 3rem;
-      width: 3rem;
+      height: 2.7rem;
+      width: 2.7rem;
       border-radius: 50%;
+      margin-right: .5rem;
     }
-
-    &_userName {
-
-    }
-
   }
 
 
