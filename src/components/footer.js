@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className={`${footerStyles.footer}`}>
       <div className={footerStyles.u_center}>
-        <p>Footer is here</p>
+        <p>Footer is maybe here</p>
       </div>
     </footer>
   )

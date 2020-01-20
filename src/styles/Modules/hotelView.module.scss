@@ -1,0 +1,169 @@
+@import '../main.scss';
+
+// The main right side section that contains VIEW/OVERVIEW/DESCRIPTION/USER REVIEW
+
+/////// HOTEL VIEW ////////////
+///////////////////
+
+// .hotelView{
+
+// }
+
+.gallery {
+  display: flex;
+
+  &_item {
+    width: 100%;
+    display: block;
+  }
+
+  // &_photoContainer {
+    
+  // }
+}
+
+////////HOTEL OVERVIEW////////
+//////////////////////
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: $border;
+
+  &_heading {
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: .9rem 1.8rem; // this padding will also adjust other flex items because of align-items: center on container
+  }
+
+  &_stars {
+    margin-right: auto;
+    display: flex;
+  }
+
+  &_starSVG {
+    fill: $color-primary;
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  &_location {
+    font-size: .75rem;
+     display: flex;
+     align-items: center;
+  }
+
+  &_locationSVG {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: $color-primary;
+    margin-right: .3rem;
+  }
+
+  &_rating {
+    background-color: $color-primary;
+    margin-left: 1.875rem;
+    color: white; 
+    padding: 0 1rem;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_ratingAverage {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: -.2rem;
+  }
+
+  &_ratingCount {
+    text-transform: uppercase;
+    font-size: .5rem;
+  }
+}
+
+////////////////////////////////
+////DESCRIPTION AND USER REVIEW
+////////////////
+
+.detail {
+  display: flex;
+  padding: 3rem;
+  background-color: $color-grey-light-1;
+  border-bottom: $border;
+}
+
+.description {
+  flex: 0 0 60%;
+  margin-right: 3rem;
+  box-shadow: $shadow-light;
+  padding: 1.8rem;
+  font-size: .875rem;
+}
+
+// paragraph and list should be in components module, but since it's a small project 
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 1.3rem;
+}
+
+.list {
+  list-style-type: none;
+  margin: 1.8rem 0;
+  padding: 1.8rem 0;
+  border-top: $border;
+  border-bottom: $border;
+
+  display: flex;
+  flex-wrap: wrap;;
+}
+
+.list_item {
+  flex: 0 0 50%;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.iconArrow {
+height: .625rem;
+width: .625rem;
+fill: $color-primary;
+margin-right: .5rem;
+}
+
+.recommend {
+  font-size: .9rem;
+  color: $color-grey-dark-3;
+  display: flex;
+  align-items: center;
+  &_count {
+    margin-right: auto;
+  }
+
+  &_friends {
+    display: flex;
+  }
+
+  &_photo {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: #fff solid 3px;
+    box-sizing: content-box;
+    &:not(:last-of-type) {
+      margin-right: -.9rem;
+    }
+  }
+
+}
+
+
+.userReview {
+background-color: yellowgreen;
+   flex: 1;
+}

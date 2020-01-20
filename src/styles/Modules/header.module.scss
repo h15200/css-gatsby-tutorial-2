@@ -9,8 +9,8 @@
 /////////////////
 // LOGO
   .logoContainer {
-    height: 3rem;
-    width: 3em;
+    height: 4rem;
+    width: 4em;
     margin-left: .4rem;
   }
 
@@ -70,7 +70,7 @@
     }
 
     &_icon {
-      filter: opacity(.5);
+      fill: $color-grey-light-4;
       height: 1.7 rem; 
       width: 1.7rem;
     }
@@ -107,7 +107,7 @@
     &_icon {
       height: 1.5rem;
       width: 1.5rem;
-      filter: opacity(.5);
+      fill: $color-grey-dark-3;
     }
 
     &_notification {
@@ -120,7 +120,7 @@
       font-size: .5rem;
       z-index: 1;
       right: .7rem;
-      top: .2rem;
+      top: .5rem;
 
       // flexbox for text inside an element! How cool is that!?
       display: flex;

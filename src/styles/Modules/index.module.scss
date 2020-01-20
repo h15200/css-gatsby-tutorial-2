@@ -1,5 +1,9 @@
 @import '../main.scss';
 
+// Page Layout ONLY
+
+// Detailed section css in modules, components also in modules
+
 .container {
   max-width: 75rem;
   margin: 5rem auto;
@@ -11,7 +15,7 @@
 
 .header {
   background-color: #fff;
-  border-bottom: $color-grey-light-2;
+  border-bottom: 1px solid $color-grey-light-2;
 } 
 
 .content {
@@ -25,6 +29,7 @@
 
 .hotelView {
   background-color: #fff;
-  background-color: orangered;
   flex: 1;   // same as flex: 1 0 auto;
+
 }
+

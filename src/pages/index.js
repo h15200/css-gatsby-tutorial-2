@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from 'gatsby-image'
+import Img from "gatsby-image"
 
 import Head from "../components/helmetHead"
 import Footer from "../components/footer"
@@ -8,30 +8,84 @@ import Footer from "../components/footer"
 // this connects main.scss to the gatsby app
 import indexStyles from "../styles/Modules/index.module.scss"
 import headerStyles from "../styles/Modules/header.module.scss"
-import sidebarStyles from '../styles/Modules/sidebar.module.scss'
+import sidebarStyles from "../styles/Modules/sidebar.module.scss"
+import hotelViewStyles from "../styles/Modules/hotelView.module.scss"
+import componentStyles from "../styles/Modules/components.module.scss"
 
 // svg sprite
-import searchSvg from '../images/SVG/magnifying-glass.svg'
-import bookmark from '../images/SVG/bookmark.svg'
-import chat from '../images/SVG/chat.svg'
-import home from '../images/SVG/home.svg'
-import airplane from '../images/SVG/aircraft-take-off.svg'
-import key from '../images/SVG/key.svg'
-import map from '../images/SVG/map.svg'
+import Mag from "../images/SVG/magnifying-glass.svg"
+import Bookmark from "../images/SVG/bookmark.svg"
+import Chat from "../images/SVG/chat.svg"
+import Home from "../images/SVG/home.svg"
+import Airplane from "../images/SVG/aircraft-take-off.svg"
+import Key from "../images/SVG/key.svg"
+import Maps from "../images/SVG/map.svg"
+import Stars from "../images/SVG/star.svg"
+import Location from "../images/SVG/location-pin.svg"
+import Arrow from "../images/SVG/chevron-thin-right.svg"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
       logo: file(relativePath: { eq: "headerLogo.png" }) {
         childImageSharp {
-          fluid (maxWidth: 100){
+          fluid(maxWidth: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      user: file(relativePath: { eq: "user.jpg"}) {
+      user: file(relativePath: { eq: "user.jpg" }) {
         childImageSharp {
-          fluid (maxWidth:100) {
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      hotelOne: file(relativePath: { eq: "hotel-1.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      hotelTwo: file(relativePath: { eq: "hotel-2.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      hotelThree: file(relativePath: { eq: "hotel-3.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      userTwo: file(relativePath: { eq: "user-2.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      userThree: file(relativePath: { eq: "user-3.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      userFour: file(relativePath: { eq: "user-4.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      userFive: file(relativePath: { eq: "user-5.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -44,25 +98,43 @@ const IndexPage = () => {
       <div className={indexStyles.container}>
         <header className={` ${headerStyles.header} ${indexStyles.header}`}>
           <div className={headerStyles.logoContainer}>
-            <Img className={headerStyles.logo} fluid={data.logo.childImageSharp.fluid} alt="logo"/>
+            <Img
+              className={headerStyles.logo}
+              fluid={data.logo.childImageSharp.fluid}
+              alt="logo"
+            />
           </div>
           <form action="#" className={headerStyles.search}>
-            <input type="text" className={headerStyles.search_input} placeholder="Search hotels"/>
+            <input
+              type="text"
+              className={headerStyles.search_input}
+              placeholder="Search hotels"
+            />
             <button className={headerStyles.search_button}>
-              <img className={headerStyles.search_icon} src={searchSvg} alt="magnifying glass icon" />
+              <Mag
+                className={headerStyles.search_icon}
+                alt="magnifying glass icon"
+              />
             </button>
           </form>
           <nav className={headerStyles.userNav}>
             <div className={headerStyles.userNav_iconBox}>
-              <img className={headerStyles.userNav_icon} src={bookmark} alt="bookmark icon"/>
+              <Bookmark
+                className={headerStyles.userNav_icon}
+                alt="bookmark icon"
+              />
               <span className={headerStyles.userNav_notification}>7</span>
             </div>
             <div className={headerStyles.userNav_iconBox}>
-              <img className={headerStyles.userNav_icon} src={chat} alt="chat icon"/>
+              <Chat className={headerStyles.userNav_icon} alt="chat icon" />
               <span className={headerStyles.userNav_notification}>13</span>
             </div>
             <div className={headerStyles.userNav_user}>
-              <Img className={headerStyles.userNav_userPhoto} fluid={data.user.childImageSharp.fluid} alt="profile pic" />
+              <Img
+                className={headerStyles.userNav_userPhoto}
+                fluid={data.user.childImageSharp.fluid}
+                alt="profile pic"
+              />
               <span className={headerStyles.userNav_userName}>Kento</span>
             </div>
           </nav>
@@ -70,27 +142,29 @@ const IndexPage = () => {
         <div className={indexStyles.content}>
           <nav className={`${indexStyles.content} ${sidebarStyles.sidebar}`}>
             <ul className={sidebarStyles.nav}>
-              <li className={sidebarStyles.nav_item}>
+              <li
+                className={`${sidebarStyles.nav_item} ${sidebarStyles.nav_item_active}`}
+              >
                 <a href="#" className={sidebarStyles.nav_link}>
-                  <img className={sidebarStyles.nav_icon} src={home} alt="home"/>
+                  <Home className={sidebarStyles.nav_icon} alt="home" />
                   <span className={sidebarStyles.nav_label}>Hotel</span>
                 </a>
               </li>
               <li className={sidebarStyles.nav_item}>
                 <a href="#" className={sidebarStyles.nav_link}>
-                  <img className={sidebarStyles.nav_icon} src={airplane} alt="airplane"/>
+                  <Airplane className={sidebarStyles.nav_icon} alt="airplane" />
                   <span className={sidebarStyles.nav_label}>Flight</span>
                 </a>
               </li>
               <li className={sidebarStyles.nav_item}>
                 <a href="#" className={sidebarStyles.nav_link}>
-                  <img className={sidebarStyles.nav_icon} src={key} alt="key"/>
+                  <Key className={sidebarStyles.nav_icon} alt="key" />
                   <span className={sidebarStyles.nav_label}>Car Rental</span>
                 </a>
               </li>
               <li className={sidebarStyles.nav_item}>
                 <a href="#" className={sidebarStyles.nav_link}>
-                  <img className={sidebarStyles.nav_icon} src={map} alt="map"/>
+                  <Maps className={sidebarStyles.nav_icon} alt="map" />
                   <span className={sidebarStyles.nav_label}>Tours</span>
                 </a>
               </li>
@@ -99,7 +173,162 @@ const IndexPage = () => {
               &copy; 2017 by trillo. All rights reserved.
             </div>
           </nav>
-          <main className={indexStyles.hotelView}>hotel view</main>
+          <main
+            className={`${indexStyles.hotelView} ${hotelViewStyles.hotelView}`}
+          >
+            <div className={hotelViewStyles.gallery}>
+              <figure className={hotelViewStyles.gallery_item}>
+                <div className={hotelViewStyles.gallery_photoContainer}>
+                  <Img
+                    className={hotelViewStyles.gallery_photo}
+                    fluid={data.hotelOne.childImageSharp.fluid}
+                    alt="hotel bed"
+                  />
+                </div>
+              </figure>
+              <figure className={hotelViewStyles.gallery_item}>
+                <div className={hotelViewStyles.gallery_photoContainer}>
+                  <Img
+                    className={hotelViewStyles.gallery_photo}
+                    fluid={data.hotelTwo.childImageSharp.fluid}
+                    alt="hotel exterior with palm trees"
+                  />
+                </div>
+              </figure>
+              <figure className={hotelViewStyles.gallery_item}>
+                <div className={hotelViewStyles.gallery_photoContainer}>
+                  <Img
+                    className={hotelViewStyles.gallery_photo}
+                    fluid={data.hotelThree.childImageSharp.fluid}
+                    alt="hotel hallway"
+                  />
+                </div>
+              </figure>
+            </div>
+
+            <div className={hotelViewStyles.overview}>
+              <h1 className={hotelViewStyles.overview_heading}>
+                Hotel Las Palmas
+              </h1>
+              <div className={hotelViewStyles.overview_stars}>
+                <Stars
+                  className={hotelViewStyles.overview_starSVG}
+                  alt="star"
+                />
+                <Stars
+                  className={hotelViewStyles.overview_starSVG}
+                  alt="star"
+                />
+                <Stars
+                  className={hotelViewStyles.overview_starSVG}
+                  alt="star"
+                />
+                <Stars
+                  className={hotelViewStyles.overview_starSVG}
+                  alt="star"
+                />
+                <Stars
+                  className={hotelViewStyles.overview_starSVG}
+                  alt="star"
+                />
+              </div>
+              <div className={hotelViewStyles.overview_location}>
+                <Location
+                  className={hotelViewStyles.overview_locationSVG}
+                  alt="location pin"
+                />
+                <button className={componentStyles.btn_inline}>
+                  Albufeira, Portugal
+                </button>
+              </div>
+              <div className={hotelViewStyles.overview_rating}>
+                <div className={hotelViewStyles.overview_ratingAverage}>
+                  8.6
+                </div>
+                <div className={hotelViewStyles.overview_ratingCount}>
+                  429 Votes
+                </div>
+              </div>
+            </div>
+
+            <div className={`${hotelViewStyles.detail} ${indexStyles.detail}`}>
+              <div
+                className={`${hotelViewStyles.description} ${indexStyles.description}`}
+              >
+                <p className={hotelViewStyles.paragraph}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+                  laboriosam deserunt cum vero, unde molestiae!
+                </p>
+                <p className={hotelViewStyles.paragraph}>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. In
+                  reiciendis alias doloribus possimus! Alias, numquam!
+                </p>
+                <ul className={hotelViewStyles.list}>
+                  <li className={hotelViewStyles.list_item}>
+                    <Arrow className={hotelViewStyles.iconArrow} />
+                    Close to the beach
+                  </li>
+                  <li className={hotelViewStyles.list_item}>
+                    <Arrow className={hotelViewStyles.iconArrow} />
+                    Breakfast included
+                  </li>
+                  <li className={hotelViewStyles.list_item}>
+                    <Arrow className={hotelViewStyles.iconArrow} />
+                    Free airport shuttle
+                  </li>
+                  <li className={hotelViewStyles.list_item}>
+                    <Arrow className={hotelViewStyles.iconArrow} />
+                    Free wifi
+                  </li>
+                  <li className={hotelViewStyles.list_item}>
+                    <Arrow className={hotelViewStyles.iconArrow} />
+                    Air conditioning and heating
+                  </li>
+                  <li className={hotelViewStyles.list_item}>
+                    <Arrow className={hotelViewStyles.iconArrow} />
+                    Pets allowed
+                  </li>
+                  <li className={hotelViewStyles.list_item}>
+                    <Arrow className={hotelViewStyles.iconArrow} />
+                    We speak all languages
+                  </li>
+                  <li className={hotelViewStyles.list_item}>
+                    <Arrow className={hotelViewStyles.iconArrow} />
+                    Perfect for families
+                  </li>
+                </ul>
+                <div className={hotelViewStyles.recommend}>
+                  <p className={hotelViewStyles.recommend_count}>
+                    Lucy and 3 other friends recommend this hotel.
+                  </p>
+                  <div className={hotelViewStyles.recommend_friends}>
+                    <Img
+                      className={hotelViewStyles.recommend_photo}
+                      fluid={data.userTwo.childImageSharp.fluid}
+                    />
+                    <Img
+                      className={hotelViewStyles.recommend_photo}
+                      fluid={data.userThree.childImageSharp.fluid}
+                    />
+                    <Img
+                      className={hotelViewStyles.recommend_photo}
+                      fluid={data.userFour.childImageSharp.fluid}
+                    />
+                    <Img
+                      className={hotelViewStyles.recommend_photo}
+                      fluid={data.userFive.childImageSharp.fluid}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className={`${hotelViewStyles.userReview} ${indexStyles.userReview}`}
+              >
+                User Review
+              </div>
+            </div>
+          </main>
         </div>
       </div>
       <Footer />
