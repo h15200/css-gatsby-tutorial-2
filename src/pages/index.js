@@ -71,14 +71,14 @@ const IndexPage = () => {
       }
       userThree: file(relativePath: { eq: "user-3.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 100) {
+          fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       userFour: file(relativePath: { eq: "user-4.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 100) {
+          fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -325,7 +325,51 @@ const IndexPage = () => {
               <div
                 className={`${hotelViewStyles.userReview} ${indexStyles.userReview}`}
               >
-                User Review
+                <figure className={hotelViewStyles.review}>
+                  <blockquote className={hotelViewStyles.review_text}>
+                    Ruf ruf ruf.. ruf ruf? ruf ruf ruf awuu! Ruf. Awuuu, ruf ruf aruuuu
+                  </blockquote>
+                  <figcaption className={hotelViewStyles.review_user}>
+                    <Img
+                      className={hotelViewStyles.review_user_photo}
+                      fluid={data.userThree.childImageSharp.fluid}
+                    />
+                    <div className={hotelViewStyles.review_user_box}>
+                      <p className={hotelViewStyles.review_user_box_name}>
+                        Kai
+                      </p>
+                      <p className={hotelViewStyles.review_user_box_date}>
+                        1/2/2020
+                      </p>
+                    </div>
+                    <div className={hotelViewStyles.review_user_rating}>
+                      8.4
+                    </div>
+                  </figcaption>
+                </figure>
+                <figure className={hotelViewStyles.review}>
+                  <blockquote className={hotelViewStyles.review_text}>
+                    Gaga goooooo aaaaaaaaa yaaaaaaaa wwwWWaaa aaaaaaa aaaaaa aaaaa!
+                  </blockquote>
+                  <figcaption className={hotelViewStyles.review_user}>
+                    <Img
+                      className={hotelViewStyles.review_user_photo}
+                      fluid={data.userFour.childImageSharp.fluid}
+                    />
+                    <div className={hotelViewStyles.review_user_box}>
+                      <p className={hotelViewStyles.review_user_box_name}>
+                        Oliver
+                      </p>
+                      <p className={hotelViewStyles.review_user_box_date}>
+                        1/15/2020
+                      </p>
+                    </div>
+                    <div className={hotelViewStyles.review_user_rating}>
+                      9.1
+                    </div>
+                  </figcaption>
+                </figure>
+                <button className={`${componentStyles.btn_inline} ${hotelViewStyles.btn}`}>Show All <span className={componentStyles.btn_inline_span}>&rarr;</span></button>
               </div>
             </div>
           </main>

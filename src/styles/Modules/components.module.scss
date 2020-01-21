@@ -11,6 +11,15 @@
   cursor: pointer;
   transition: all .2s;
 
+  &_span {
+    margin-left: 5px;
+    transition: margin-left .2s;
+  }
+
+  &:hover &_span {
+    margin-left: 8px;
+  }
+
   &:hover {
     color: $color-grey-dark-1;
     animation: pulsate 1s infinite;

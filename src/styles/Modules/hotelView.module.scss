@@ -92,9 +92,10 @@
 
 .detail {
   display: flex;
-  padding: 3rem;
+  padding: 3rem; // padding set to same value as margin-right of description for even spacing
   background-color: $color-grey-light-1;
   border-bottom: $border;
+  font-size: .875rem;
 }
 
 .description {
@@ -102,7 +103,6 @@
   margin-right: 3rem;
   box-shadow: $shadow-light;
   padding: 1.8rem;
-  font-size: .875rem;
 }
 
 // paragraph and list should be in components module, but since it's a small project 
@@ -159,11 +159,87 @@ margin-right: .5rem;
       margin-right: -.9rem;
     }
   }
-
 }
 
-
 .userReview {
-background-color: yellowgreen;
    flex: 1;
+   font-size: .875rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.review {
+  background-color: #fff;
+  box-shadow: $shadow-light;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1.8rem;
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    color: $color-grey-light-3;
+    font-size: 12rem;
+    top: -5rem;
+    left: 0rem;
+    font-family: sans-serif;
+    z-index: 1;
+    
+  }
+
+
+  &_text {
+    margin-bottom: 1.2rem;
+    z-index: 10;
+    position: relative;
+  }
+
+  &_user {
+    display: flex;
+    align-items: center;
+
+
+    &_photo {
+      width: 2.8rem;  
+      height: 2.8rem;
+      border-radius: 50%;
+      margin-right: 1.3rem;
+    }
+
+  &_box {
+   margin-right: auto;
+
+    &_name {
+      font-size: .68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    &_date {
+      font-size: .625rem;
+      color: $color-grey-dark-3;
+
+    }
+
+  }
+
+  &_rating {
+   color: $color-primary;
+   font-size: 1.5rem;
+   font-weight: 300;
+  }
+
+  }
+}
+
+.btn {
+margin-top: 2rem;
 }
