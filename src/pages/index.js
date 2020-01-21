@@ -139,6 +139,7 @@ const IndexPage = () => {
             </div>
           </nav>
         </header>
+
         <div className={indexStyles.content}>
           <nav className={`${indexStyles.content} ${sidebarStyles.sidebar}`}>
             <ul className={sidebarStyles.nav}>
@@ -173,6 +174,7 @@ const IndexPage = () => {
               &copy; 2017 by trillo. All rights reserved.
             </div>
           </nav>
+
           <main
             className={`${indexStyles.hotelView} ${hotelViewStyles.hotelView}`}
           >
@@ -327,7 +329,8 @@ const IndexPage = () => {
               >
                 <figure className={hotelViewStyles.review}>
                   <blockquote className={hotelViewStyles.review_text}>
-                    Ruf ruf ruf.. ruf ruf? ruf ruf ruf awuu! Ruf. Awuuu, ruf ruf aruuuu
+                    Ruf ruf ruf.. ruf ruf? ruf ruf ruf awuu! Ruf. Awuuu, ruf ruf
+                    aruuuu
                   </blockquote>
                   <figcaption className={hotelViewStyles.review_user}>
                     <Img
@@ -349,7 +352,8 @@ const IndexPage = () => {
                 </figure>
                 <figure className={hotelViewStyles.review}>
                   <blockquote className={hotelViewStyles.review_text}>
-                    Gaga goooooo aaaaaaaaa yaaaaaaaa wwwWWaaa aaaaaaa aaaaaa aaaaa!
+                    Gaga goooooo aaaaaaaaa yaaaaaaaa wwwWWaaa aaaaaaa aaaaaa
+                    aaaaa!
                   </blockquote>
                   <figcaption className={hotelViewStyles.review_user}>
                     <Img
@@ -369,8 +373,28 @@ const IndexPage = () => {
                     </div>
                   </figcaption>
                 </figure>
-                <button className={`${componentStyles.btn_inline} ${hotelViewStyles.btn}`}>Show All <span className={componentStyles.btn_inline_span}>&rarr;</span></button>
+                <button
+                  className={`${componentStyles.btn_inline} ${hotelViewStyles.btnReview}`}
+                >
+                  Show All{" "}
+                  <span className={componentStyles.btn_inline_span}>
+                    &rarr;
+                  </span>
+                </button>
               </div>
+            </div>
+
+            <div className={hotelViewStyles.cta}>
+              {" "}
+              <h2 className={hotelViewStyles.cta_bookNow}>
+                Good news! We have 4 rooms available for your selected dates!
+              </h2>
+              <button className={hotelViewStyles.btnCta}>
+                <span className={hotelViewStyles.btnCta_visible}>Book now</span>
+                <span className={hotelViewStyles.btnCta_invisible}>
+                  Only 4 rooms left
+                </span>
+              </button>
             </div>
           </main>
         </div>
