@@ -11,9 +11,11 @@
   cursor: pointer;
   transition: all .2s;
 
+
   &_span {
     margin-left: 5px;
     transition: margin-left .2s;
+
   }
 
   &:hover &_span {

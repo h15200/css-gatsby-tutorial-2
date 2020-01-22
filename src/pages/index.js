@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 import Head from "../components/helmetHead"
-import Footer from "../components/footer"
 
 // this connects main.scss to the gatsby app
 import indexStyles from "../styles/Modules/index.module.scss"
@@ -141,7 +140,7 @@ const IndexPage = () => {
         </header>
 
         <div className={indexStyles.content}>
-          <nav className={`${indexStyles.content} ${sidebarStyles.sidebar}`}>
+          <nav className={`${indexStyles.sidebar} ${sidebarStyles.sidebar}`}>
             <ul className={sidebarStyles.nav}>
               <li
                 className={`${sidebarStyles.nav_item} ${sidebarStyles.nav_item_active}`}
@@ -399,7 +398,6 @@ const IndexPage = () => {
           </main>
         </div>
       </div>
-      <Footer />
     </Fragment>
   )
 }

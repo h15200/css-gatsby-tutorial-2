@@ -14,3 +14,10 @@ $color-grey-dark-3: #999;
 $shadow-dark: 0 1.2rem 3.6rem rgba(0,0,0,.3);
 $shadow-light: 0 1.2rem 3rem rgba(0,0,0,.2);
 $border: 1px solid $color-grey-light-2;
+
+// Media Query
+$bp-largest: 80em; //1280px - when outside pink borders are not needed
+$bp-large:66.25em; //1060px - when "air conditioning and heaitng" breaks into new line, change font size
+$bp-medium: 58em; //928px - to vertical structure
+$bp-small: 41em; //655px - when "air conditioning" breaks again
+$bp-smallest: 26em; // 416px

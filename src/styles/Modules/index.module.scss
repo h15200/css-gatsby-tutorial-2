@@ -10,7 +10,11 @@
   background-color: $color-grey-light-2;
   box-shadow: $shadow-dark;
 
-  min-height: 30rem; 
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: none;
+  }
+
 }
 
 .header {
@@ -20,6 +24,9 @@
 
 .content {
   display: flex;
+  @media only screen and (max-width: $bp-medium){
+    flex-direction: column;
+  }
 }
 
 .sidebar {   

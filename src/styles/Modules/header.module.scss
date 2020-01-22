@@ -4,6 +4,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 4rem;
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap;
+    height: 7rem;
+    align-content: space-around;
+  }    
 }
 
 /////////////////
@@ -12,9 +19,17 @@
     height: 4rem;
     width: 4em;
     margin-left: .4rem;
+
+    @media only screen and (max-width: $bp-small){
+    height: 3rem;
+    width: 3rem;
+    margin-left: 0;
+    }
   }
 
+  .logo {
 
+  }
 
   /////////////////
 // SEARCH
@@ -24,6 +39,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media only screen and (max-width: $bp-smallest) {
+      background-color: $color-grey-light-2;
+    }    
+
+    @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    
+    }    
 
     &_input {
       font-family: inherit;
@@ -35,12 +59,18 @@
       width: 80%;
       padding: .4rem .8rem;
       transition: all .2s;
-      margin-right: -3rem; // merge with icon
+      margin-right: -3.5rem; // merge with icon
+
+
       
       &:focus {
         outline: none;
         width: 100%;
         background-color: $color-grey-light-3;
+
+        @media only screen and (max-width: $bp-smallest) {
+          width: 90%;
+        }    
       }
 
         &::-webkit-input-placeholder {
@@ -71,7 +101,7 @@
 
     &_icon {
       fill: $color-grey-light-4;
-      height: 1.7 rem; 
+      height: 1.7rem; 
       width: 1.7rem;
     }
   }
@@ -93,6 +123,14 @@
 
       display: flex;
       align-items: center;
+
+      @media only screen and (max-width: $bp-small){
+        padding: 0 .8rem;
+      }
+
+      @media only screen and (max-width: $bp-smallest) {
+        padding: 0 .4rem;
+      }
 
       &:hover {
         background-color: $color-grey-light-2;
@@ -129,6 +167,9 @@
     }
     &_user {
       padding: 0 1.3rem 0 .5rem;
+      @media only screen and (max-width: $bp-small){
+        padding: 0 .4rem 0 .4rem;
+      }
     }
 
     &_userPhoto {

@@ -36,6 +36,14 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: .9rem 1.8rem; // this padding will also adjust other flex items because of align-items: center on container
+
+    @media only screen and (max-width: $bp-small){
+      padding: .7rem 1rem;
+      font-size: 1rem;
+    }
+    @media only screen and (max-width: $bp-smallest){
+      font-size: .7rem;
+    }
   }
 
   &_stars {
@@ -47,12 +55,24 @@
     fill: $color-primary;
     width: 1.1rem;
     height: 1.1rem;
+    @media only screen and (max-width: $bp-small){
+      width: .8rem;
+      height: .8rem;
+    }
+  @media only screen and (max-width: $bp-smallest) {
+    width: .5rem;
+    height: .5rem;
+  }    
+
   }
 
   &_location {
     font-size: .75rem;
      display: flex;
      align-items: center;
+     @media only screen and (max-width: $bp-smallest){
+      font-size: .4rem;
+    }
   }
 
   &_locationSVG {
@@ -60,6 +80,11 @@
     height: 1.1rem;
     fill: $color-primary;
     margin-right: .3rem;
+
+    @media only screen and (max-width: $bp-small){
+      width: .8rem;
+      height: .8rem;
+    }
   }
 
   &_rating {
@@ -72,22 +97,38 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-small){
+      padding: 0 .5rem;
+    }
   }
 
   &_ratingAverage {
     font-size: 1.4rem;
     font-weight: 300;
     margin-bottom: -.2rem;
+    @media only screen and (max-width: $bp-small){
+      font-size: .9rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      font-size: 8px;
+    }    
   }
 
   &_ratingCount {
     text-transform: uppercase;
     font-size: .5rem;
+    @media only screen and (max-width: $bp-small){
+      font-size: .2rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      font-size: 8px;
+    }    
   }
 }
 
-////////////////////////////////
-////DESCRIPTION AND USER REVIEW
+///////////////////
+////DESCRIPTION 
 ////////////////
 
 .detail {
@@ -96,6 +137,15 @@
   background-color: $color-grey-light-1;
   border-bottom: $border;
   font-size: .875rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 1.8rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+   
+  }
 }
 
 .description {
@@ -103,6 +153,14 @@
   margin-right: 3rem;
   box-shadow: $shadow-light;
   padding: 1.8rem;
+  @media only screen and (max-width: $bp-medium) {
+    padding: 1.25rem;
+    margin-right: 1.8rem;
+  }
+  @media only screen and (max-width: $bp-small){
+    margin: 3rem 0;
+  }
+
 }
 
 // paragraph and list should be in components module, but since it's a small project 
@@ -162,24 +220,38 @@ margin-right: .5rem;
 }
 
 .userReview {
-   flex: 1;
-   font-size: .875rem;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  flex: 1;
+  font-size: .875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  
 }
 
+////////////////
+////////REVIEW
+////////////
 .review {
   background-color: #fff;
   box-shadow: $shadow-light;
-  padding: 1.8rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  
+  @media only screen and (max-width: $bp-medium) {
+    padding: 1.25rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    width: 100%;
+  }    
 
   &:not(:last-of-type) {
     margin-bottom: 1.8rem;
+
   }
 
   &::before {
@@ -248,8 +320,12 @@ margin-top: 2rem;
 /////CTA///////
 
 .cta {
-  padding: 2.2rem 3rem;
+  padding: 2.2rem 0;
   text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 1.7rem 0;
+  }
 
   &_bookNow {
     text-transform: uppercase;

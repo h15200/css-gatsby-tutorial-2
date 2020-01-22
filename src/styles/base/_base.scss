@@ -9,6 +9,15 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 80%;
+  }
+
+}
+
 body {
   background-image: linear-gradient(to bottom right, $color-primary, $color-primary-dark);
   background-size: cover;
